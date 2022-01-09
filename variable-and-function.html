@@ -1,0 +1,42 @@
+<html>
+  <body>
+    <canvas width="600" height="600"></canvas>
+    <h1>HI</h1>
+    <script>
+      let canvas = document.querySelector('canvas');
+      let context = canvas.getContext('2d');
+
+      //Variables
+      // x is a variable
+      // 5 is the value
+      let x = 5;
+
+      let year = 2042;
+      let nextYear = year + 1;
+
+      let dinner = 'salad';
+      let sentence = `tonight, dinner will be ` + dinner;
+
+      //Function
+      function saySomething(param) {
+        console.log(param);
+      }
+
+      saySomething('Hey there'); // Params being passed in
+      saySomething(Sentence); // variables being passed in
+
+      function add(a, b) {
+        return a + b;
+      }
+
+      let result = add(5, 7);
+      console.log(result);
+
+      let multiply = (a, b) => {
+        return a * b;
+      };
+
+      console.log(multiply(5, 7));
+    </script>
+  </body>
+</html>
