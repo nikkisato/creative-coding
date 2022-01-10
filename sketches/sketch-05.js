@@ -2,7 +2,10 @@ const canvasSketch = require('canvas-sketch');
 
 const settings = {
   dimensions: [1080, 1080],
+  animate: true,
 };
+
+let manager;
 
 let text = 'A';
 let fontSize = 1200;
@@ -44,4 +47,41 @@ const sketch = () => {
   };
 };
 
-canvasSketch(sketch, settings);
+const onKeyUp = (e) => {
+  text = e.key.toUpperCase();
+  manager.render();
+};
+
+document.addEventListener('keyup', onKeyUp);
+
+const start = async () => {
+  manager = await canvasSketch(sketch, settings);
+};
+start();
+/*
+const url = 'https://picsum.photos/200';
+
+const loadMeSomeImages = (url) => {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => reject();
+    img.src = url;
+  });
+};
+
+// const start = () => {
+//   loadMeSomeImages(url).then((img) => {
+//     console.log('image width', img.width);
+//   });
+//   console.log('this line');
+// };
+
+const start = async () => {
+  const img = await loadMeSomeImages(url);
+  console.log('image width', img.width);
+  console.log('this line');
+};
+
+start();
+*/
